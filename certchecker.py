@@ -23,7 +23,7 @@ C_SSLYZEJSON = "sslyze.json"
 # functions
 #------------------------------------------------------------------------------------------
 def f_siteadd(fqdn):
-    query = "SELECT sslsite_id from site where `address` = %s"
+    query = "SELECT site_id from site where `address` = %s"
     g_cursor.execute(query, (fqdn, ))
     if g_cursor.rowcount == 0:
         query = "insert into site (`address`) values (%s)"
@@ -39,30 +39,30 @@ def f_siteupdate(siteid, myvar, myval):
     if myval == "False":
         myval = 0
     if myval == "+1":
-        query = "update site set failcount = failcount + 1 where `sslsite_id` = %s"
+        query = "update site set failcount = failcount + 1 where `site_id` = %s"
         g_cursor.execute(query, (siteid, ))
         return
     if myval == "now":
-        query = "update site set " + myvar + " = now() where `sslsite_id` = %s"
+        query = "update site set " + myvar + " = now() where `site_id` = %s"
         g_cursor.execute(query, (siteid, ))
         return
-    query = "update site set " + myvar + " = %s where `sslsite_id` = %s"
+    query = "update site set " + myvar + " = %s where `site_id` = %s"
     g_cursor.execute(query, (myval, siteid, ))
 
 def f_sitecertinit(siteid):
-    query = "update sitecert set alive = 0 where `sslsite_id` = %s"
+    query = "update sitecert set alive = 0 where `site_id` = %s"
     g_cursor.execute(query, (siteid,))
 
 
 def f_sitecertadd(siteid, serial):
-    query = "SELECT sslsite_id, serial from sitecert where `sslsite_id` = %s and `serial` = %s"
+    query = "SELECT site_id, serial from sitecert where `site_id` = %s and `serial` = %s"
     g_cursor.execute(query, (siteid, serial,))
     if g_cursor.rowcount == 0:
-        query = "insert into sitecert (`sslsite_id`, `serial`) values (%s, %s)"
+        query = "insert into sitecert (`site_id`, `serial`) values (%s, %s)"
         g_cursor.execute(query, (siteid, serial,))
 
 def f_sitecertupdate(siteid, serial, myvar, myval):        
-    query = "update sitecert set " + myvar + " = %s, updatets = now(0) where `sslsite_id` = %s and `serial` = %s "
+    query = "update sitecert set " + myvar + " = %s, updatets = now(0) where `site_id` = %s and `serial` = %s "
     g_cursor.execute(query, (myval, siteid, serial,))
 
 def f_getsslsuiteid(suitename):
@@ -72,14 +72,14 @@ def f_getsslsuiteid(suitename):
     return row[0]
 
 def f_sitesslinit(siteid):
-    query = "update sitessl set alive = 0 where `sslsite_id` = %s"
+    query = "update sitessl set alive = 0 where `site_id` = %s"
     g_cursor.execute(query, (siteid,))
 
 def f_sitessladd(siteid, suitename, cyphername):
-    query = "SELECT sslsitesuite_id from sitessl where `sslsite_id` = %s and `sslsuite_id` = %s and `cyphersuite_id` = %s "
+    query = "SELECT sitessl_id from sitessl where `site_id` = %s and `sslsuite_id` = %s and `cyphersuite_id` = %s "
     g_cursor.execute(query, (siteid, f_getsslsuiteid(suitename), f_cypheradd(cyphername),))
     if g_cursor.rowcount == 0:
-        query = "insert into sitessl (`sslsite_id`, `sslsuite_id`, `cyphersuite_id`) values (%s, %s, %s)"
+        query = "insert into sitessl (`site_id`, `sslsuite_id`, `cyphersuite_id`) values (%s, %s, %s)"
         g_cursor.execute(query, (siteid, f_getsslsuiteid(suitename), f_cypheradd(cyphername),))
         return g_cursor.lastrowid
     else:
@@ -91,7 +91,7 @@ def f_sitesslupdate(sitesslid, myvar, myval):
         myval = 1
     if myval == "False":
         myval = 0
-    query = "update sitessl set " + myvar + " = %s, updatets = now(0) where `sslsitesuite_id` = %s "
+    query = "update sitessl set " + myvar + " = %s, updatets = now(0) where `sitessl_id` = %s "
     g_cursor.execute(query, (myval, sitesslid,))
     
 def f_cypheradd(cyphername):
@@ -119,17 +119,17 @@ def f_cypherenum(cypherlist, sslsuite, supported, accepted):
         f_sitesslupdate(sitesslid, "accepted", accepted)        
 
 def f_sitednsinit(siteid):
-    query = "update sitedns set alive = 0 where `sslsite_id` = %s"
+    query = "update sitedns set alive = 0 where `site_id` = %s"
     g_cursor.execute(query, (siteid,))
 
 def f_sitednsadd(siteid, dns):
-    query = "SELECT sslsite_id from sitedns where `sslsite_id` = %s and `dns` = %s"
+    query = "SELECT site_id from sitedns where `site_id` = %s and `dns` = %s"
     g_cursor.execute(query, (siteid, dns, ))
     if g_cursor.rowcount == 0:
-        query = "insert into sitedns (`sslsite_id`, `dns`) values (%s, %s)"
+        query = "insert into sitedns (`site_id`, `dns`) values (%s, %s)"
         g_cursor.execute(query, (siteid, dns))
     else:
-        query = "update sitedns set updatets = now(0), alive = 1 where `sslsite_id` = %s"
+        query = "update sitedns set updatets = now(0), alive = 1 where `site_id` = %s"
         g_cursor.execute(query, (siteid, ))
 
 
