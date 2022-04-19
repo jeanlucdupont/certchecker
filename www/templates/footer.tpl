@@ -9,8 +9,5 @@
 			</div>
 		</div>
     </div>
-    <script src="js/template.js"></script>
-    <script src="js/jquery.cookie.js" type="text/javascript"></script>
-    <script src="js/dashboard.js"></script>
   </body>
 </html>
