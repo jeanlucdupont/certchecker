@@ -5,10 +5,10 @@
 				<div class="content-wrapper">
 					<div class="row">
 						<div class="col-sm grid-margin grid-margin-md-0 stretch-card">
-							<div class="card">
-								<div class="card-body">
+							<div class="card text-light">
+								<div class="card-body bg-dark">
 									<div class="d-flex align-items-center justify-content-between">
-										<h4 class="card-title">Approved protocols</h4>
+										<h4 class="card-title text-light">Approved protocols</h4>
 									</div>
 									<div class="row">
 										{section name=idx loop=$protlist}
@@ -31,10 +31,10 @@
 					<br>
 					<div class="row">
 						<div class="col-sm grid-margin grid-margin-md-0 stretch-card">
-							<div class="card">
-								<div class="card-body">
+							<div class="card text-light">
+								<div class="card-body bg-dark">
 									<div class="d-flex align-items-center justify-content-between">
-										<h4 class="card-title">Approved cypher suites</h4>
+										<h4 class="card-title text-light">Approved cypher suites</h4>
 									</div>
 									<div class="row">
 										{foreach $cypherlist as $cypher}

@@ -4,84 +4,41 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Cert-Checker</title>
+	<link rel="icon" type="image/x-icon" href="img/favicon.ico">
 	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=2">
+    <link rel="stylesheet" href="css/style.css?v=5">
     <link rel="shortcut icon" href="images/favicon.png" />
+	<link href="css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+	<script src="js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 	<script src="https://kit.fontawesome.com/7b0aadb328.js" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   </head>
   <body>
-    <div class="container-scroller">
+    <div class="float-container">
     <div class="horizontal-menu">
-      <nav class="bottom-navbar">
+      <nav class="bottom-navbar bg-dark">
         <div class="container">
-            <ul class="nav page-navigation">
+            <ul class="nav page-navigation"> 
               <li class="nav-item">
-                <a class="nav-link" href="index.php">
-                  <i class="mdi mdi-file-document-box menu-icon"></i>
-                  <span class="menu-title">Dashboard</span>
+                <a href="index.php" class="nav-link text-info">
+                  <span class="menu-title"><h4>Home</h4></span>
                 </a>
               </li>
               <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <i class="mdi mdi-cube-outline menu-icon"></i>
-                    <span class="menu-title">UI Elements</span>
-                    <i class="menu-arrow"></i>
-                  </a>
-                  <div class="submenu">
-                      <ul>
-                          <li class="nav-item"><a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
-                          <li class="nav-item"><a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
-                      </ul>
-                  </div>
-              </li>
-              <li class="nav-item">
-                  <a href="settings.php" class="nav-link">
-                    <i class="mdi mdi-chart-areaspline menu-icon"></i>
-                    <span class="menu-title">Settings</span>
-                    <i class="menu-arrow"></i>
+                  <a href="settings.php" class="nav-link text-info">
+                    <span class="menu-title"><h4>Certificate settings</h4></span>
                   </a>
               </li>
               <li class="nav-item">
-                  <a href="pages/charts/chartjs.html" class="nav-link">
-                    <i class="mdi mdi-finance menu-icon"></i>
-                    <span class="menu-title">Charts</span>
-                    <i class="menu-arrow"></i>
+                  <a href="settings.php" class="nav-link text-info">
+                    <span class="menu-title"><h4>Site settings</h4></span>
                   </a>
               </li>
               <li class="nav-item">
-                  <a href="pages/tables/basic-table.html" class="nav-link">
-                    <i class="mdi mdi-grid menu-icon"></i>
-                    <span class="menu-title">Tables!!</span>
-                    <i class="menu-arrow"></i>
+                  <a href="settings.php" class="nav-link text-info">
+                    <span class="menu-title"><h4>Email settings</h4></span>
+
                   </a>
-              </li>
-              <li class="nav-item">
-                  <a href="pages/icons/mdi.html" class="nav-link">
-                    <i class="mdi mdi-emoticon menu-icon"></i>
-                    <span class="menu-title">Icons</span>
-                    <i class="menu-arrow"></i>
-                  </a>
-              </li>
-              <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <i class="mdi mdi-codepen menu-icon"></i>
-                    <span class="menu-title">Sample Pages</span>
-                    <i class="menu-arrow"></i>
-                  </a>
-                  <div class="submenu">
-                      <ul class="submenu-item">
-                          <li class="nav-item"><a class="nav-link" href="pages/samples/login.html">Login</a></li>
-                          <li class="nav-item"><a class="nav-link" href="pages/samples/login-2.html">Login 2</a></li>
-                          <li class="nav-item"><a class="nav-link" href="pages/samples/register.html">Register</a></li>
-                          <li class="nav-item"><a class="nav-link" href="pages/samples/register-2.html">Register 2</a></li>
-                          <li class="nav-item"><a class="nav-link" href="pages/samples/lock-screen.html">Lockscreen</a></li>
-                      </ul>
-                  </div>
-              </li>
-              <li class="nav-item">
-                  <a href="docs/documentation.html" class="nav-link">
-                    <i class="mdi mdi-file-document-box-outline menu-icon"></i>
-                    <span class="menu-title">Documentation</span></a>
               </li>
             </ul>
         </div>
