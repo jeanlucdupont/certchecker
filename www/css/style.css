@@ -1,3 +1,18 @@
+
+.h4 {
+	color: #ff0000;
+}
+
+.dns-entry {
+	font-size: 12px;
+}
+
+.dns-entry-title {
+	font-size: 12px;
+	font-weight: bold;
+}
+
+
 .hiddenRow {
     padding: 0 !important;
 }
