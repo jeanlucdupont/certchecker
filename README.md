@@ -8,7 +8,8 @@ Three steps:<br>
 3: Make a scheduler do send alerts and reports<br>
 <br>
 2022 04 14 Step #1 is done. Python<br>
-2022 04 19 Working on step #2. Now we have a list with collapsable rows!<br>
+2022 04 20 Working on step #2. Main page interface is done.
 
-![image](https://user-images.githubusercontent.com/103344686/164136827-32c1466f-52f1-4a39-89c2-d518e0f88a4e.png)
+![image](https://user-images.githubusercontent.com/103344686/164353503-052ba92f-fda0-4e5e-a8ec-dfa0728ebe2c.png)
+
 
