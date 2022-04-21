@@ -1,6 +1,6 @@
 # certchecker
 Fed up with expired SSLs that block systems.<br>
-I wanted a system that warns me when a cert is about to expire. Or that tells me when some certs are at risk (e.g. weak encryption, self-signed, ...)<br>
+I wanted a system that warns me when a cert is about to expire. Or that tells me when some certs are at risk (e.g. weak encryption or algo)<br>
 <br>
 Three steps:<br>
 1: Make a python proggy that parses SSLYZE outputs and update a DB<br>
