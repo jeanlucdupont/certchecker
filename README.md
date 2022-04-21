@@ -5,7 +5,7 @@ I wanted a system that warns me when a cert is about to expire. Or that tells me
 Three steps:<br>
 1: Make a python proggy that parses SSLYZE outputs and update a DB<br>
 2: Make a web interface.<br>
-3: Make a scheduler do send alerts and reports<br>
+3: Make a scheduler to send alerts and reports<br>
 <br>
 2022 04 14 Step #1 is done. Python<br>
 2022 04 20 Working on step #2. 
