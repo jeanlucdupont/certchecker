@@ -8,8 +8,15 @@ Three steps:<br>
 3: Make a scheduler do send alerts and reports<br>
 <br>
 2022 04 14 Step #1 is done. Python<br>
-2022 04 20 Working on step #2. Main page interface is done.
+2022 04 20 Working on step #2. 
+  Main page interface is done.
+  Next step is to allow site add/removal
+  Then email settings
 
-![image](https://user-images.githubusercontent.com/103344686/164353503-052ba92f-fda0-4e5e-a8ec-dfa0728ebe2c.png)
+![image](https://user-images.githubusercontent.com/103344686/164357949-586f58d2-2ad4-481e-a1b9-00a4bb43dafe.png)
+
+![image](https://user-images.githubusercontent.com/103344686/164358033-849206d1-2a78-475f-a1ae-8d2f39a129fa.png)
+
+
 
 
