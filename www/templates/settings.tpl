@@ -4,6 +4,11 @@
 			<div class="main-panel">
 				<div class="content-wrapper">
 					<div class="row">
+						<div class="col-sm grid-margin grid-margin-md-0">
+							<button type="button" class="btn btn-primary" style="float: right;"><h4>Apply</h4></button>
+						</div>
+					</div>
+					<br><div class="row">
 						<div class="col-sm grid-margin grid-margin-md-0 stretch-card">
 							<div class="card text-light">
 								<div class="card-body bg-dark">

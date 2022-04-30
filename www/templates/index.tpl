@@ -83,7 +83,7 @@
 							<div class="card" >
 								<div class="card-body">
 									<div class="d-flex align-items-center justify-content-between">
-										<h1 class="card-title"><img src="img/certchecker-logo.png" style="width:155px;height:48px;"></h1>
+										<h2 class="card-title"><img src="img/ccicon.png"></h2>
 										<h2 class="text-info font-weight-bold">{$count_site} sites</h2>
 									</div>						
 									<table class="table ">
