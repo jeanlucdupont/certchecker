@@ -48,7 +48,7 @@ $smarty->assign('certlist', $certlist);
 
 
 
-$request  = "select * from `site`";
+$request  = "select * from `site` order by `address`";
 $ans      = mysqli_query($connect, $request);
 $sitelist = array();
 while ($fields = mysqli_fetch_array($ans))
