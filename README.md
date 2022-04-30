@@ -7,11 +7,11 @@ Three steps:<br>
 2: Make a web interface.<br>
 3: Make a scheduler to send alerts and reports<br>
 <br>
-2022 04 14 Step #1 is done. Python<br>
-2022 04 20 Working on step #2. 
-  Main page interface is done.
-2022 04 30
-  Site management is done
+2022 04 14 Step #1 is done. <br>
+2022 04 20 Working on step #2. <br>
+  Main page interface is done. <br>
+2022 04 30 step #2 <br>
+  Site management is done <br>
 
 ![image](https://user-images.githubusercontent.com/103344686/166121124-c17a88f0-1ba3-4364-89aa-73951d9dcc1b.png)
 
