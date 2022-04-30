@@ -13,9 +13,10 @@ Three steps:<br>
 2022 04 30
   Site management is done
 
-![image](https://user-images.githubusercontent.com/103344686/164357949-586f58d2-2ad4-481e-a1b9-00a4bb43dafe.png)
+![image](https://user-images.githubusercontent.com/103344686/166121124-c17a88f0-1ba3-4364-89aa-73951d9dcc1b.png)
 
-![image](https://user-images.githubusercontent.com/103344686/164358033-849206d1-2a78-475f-a1ae-8d2f39a129fa.png)
+
+![image](https://user-images.githubusercontent.com/103344686/166121133-e6ece81a-e167-4bed-b3cc-3706c128dbf3.png)
 
 
 ![image](https://user-images.githubusercontent.com/103344686/166121109-b888f964-0c80-4033-ad4d-0580bea14255.png)
