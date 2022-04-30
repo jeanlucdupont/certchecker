@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS `cyphersuite` (
   PRIMARY KEY (`cyphersuite_id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=330 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 
--- Dumping data for table certchecker.cyphersuite: ~235 rows (approximately)
+-- Dumping data for table certchecker.cyphersuite: ~215 rows (approximately)
 INSERT INTO `cyphersuite` (`cyphersuite_id`, `cypher_name`, `ok`) VALUES
 	(7, 'SSL_CK_DES_192_EDE3_CBC_WITH_MD5\r', 0),
 	(8, 'SSL_CK_DES_64_CBC_WITH_MD5\r', 0),
@@ -265,6 +265,24 @@ INSERT INTO `cyphersuite` (`cyphersuite_id`, `cypher_name`, `ok`) VALUES
 	(328, 'TLS_DH_anon_WITH_AES_128_GCM_SHA256', 0),
 	(329, 'TLS_DH_anon_WITH_AES_128_CBC_SHA256', 0);
 
+-- Dumping structure for table certchecker.mailconf
+CREATE TABLE IF NOT EXISTS `mailconf` (
+  `address` varchar(256) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
+
+-- Dumping data for table certchecker.mailconf: ~0 rows (approximately)
+
+-- Dumping structure for table certchecker.recipient
+CREATE TABLE IF NOT EXISTS `recipient` (
+  `server` varchar(256) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `port` smallint DEFAULT NULL,
+  `from` varchar(256) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `user` varchar(256) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `password` varchar(256) COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
+
+-- Dumping data for table certchecker.recipient: ~0 rows (approximately)
+
 -- Dumping structure for table certchecker.site
 CREATE TABLE IF NOT EXISTS `site` (
   `site_id` int NOT NULL AUTO_INCREMENT,
@@ -283,39 +301,39 @@ CREATE TABLE IF NOT EXISTS `site` (
   `successts` datetime DEFAULT NULL,
   `failcount` smallint NOT NULL DEFAULT '0',
   PRIMARY KEY (`site_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table certchecker.site: ~10 rows (approximately)
+-- Dumping data for table certchecker.site: ~27 rows (approximately)
 INSERT INTO `site` (`site_id`, `address`, `highestssl`, `robotresult`, `heartbleed`, `cssinjection`, `renegodos`, `secrenego`, `sslrisk`, `cypherrisk`, `daterisk`, `firstts`, `tryts`, `successts`, `failcount`) VALUES
-	(6, 'expired.badssl.com', 'TLS_1_2', 'NOT_VULNERABLE_NO_ORACLE', 1, 0, 0, 1, 3, 48, -2563, '2022-04-17 17:51:51', '2022-04-18 17:20:55', '2022-04-17 17:51:51', 0),
+	(6, 'expired.badssl.com', 'TLS_1_2', 'NOT_VULNERABLE_NO_ORACLE', 1, 0, 0, 1, 3, 48, -2575, '2022-04-17 17:51:51', '2022-04-30 15:35:12', '2022-04-17 17:51:51', 0),
 	(7, '192.168.1.20', NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 100000, '2022-04-17 17:54:02', '2022-04-17 20:51:26', NULL, 1),
-	(8, '192.168.1.22', 'TLS_1_2', 'NOT_VULNERABLE_NO_ORACLE', 0, 0, 0, 1, 0, 21, 286, '2022-04-17 17:54:08', '2022-04-18 17:20:55', '2022-04-17 17:54:08', 0),
-	(9, 'google.com', 'TLS_1_3', 'NOT_VULNERABLE_NO_ORACLE', 0, 0, 0, 1, 2, 24, 63, '2022-04-17 17:54:41', '2022-04-18 17:20:55', '2022-04-17 17:54:41', 0),
-	(10, 'gmail.com', 'TLS_1_3', 'NOT_VULNERABLE_NO_ORACLE', 0, 0, 0, 1, 2, 24, 63, '2022-04-17 17:54:59', '2022-04-18 17:20:55', '2022-04-17 17:54:59', 0),
-	(11, 'cisco.com', 'TLS_1_2', 'NOT_VULNERABLE_NO_ORACLE', 0, 0, 0, 0, 2, 20, 304, '2022-04-17 17:55:19', '2022-04-18 17:20:55', '2022-04-17 17:55:19', 0),
-	(12, 'twitter.com', 'TLS_1_3', 'NOT_VULNERABLE_NO_ORACLE', 0, 0, 0, 1, 0, 11, 238, '2022-04-17 17:55:33', '2022-04-18 17:20:55', '2022-04-17 17:55:33', 0),
-	(13, 'securitytabbits.com', 'TLS_1_3', 'NOT_VULNERABLE_NO_ORACLE', 0, 0, 0, 1, 0, 11, 238, '2022-04-17 17:55:51', '2022-04-18 17:20:55', '2022-04-17 17:55:51', 0),
-	(14, 'github.com', 'TLS_1_3', 'NOT_VULNERABLE_NO_ORACLE', 0, 0, 0, 1, 0, 21, 331, '2022-04-17 17:56:02', '2022-04-18 17:20:55', '2022-04-17 17:56:02', 0),
-	(15, 'getbootstrap.com', 'TLS_1_3', 'NOT_VULNERABLE_NO_ORACLE', 0, 0, 0, 1, 2, 30, 84, '2022-04-17 17:56:38', '2022-04-18 17:20:55', '2022-04-17 17:56:38', 0),
-	(16, 'fontawesome.com', 'TLS_1_3', 'NOT_VULNERABLE_NO_ORACLE', 0, 0, 0, 1, 2, 25, 258, '2022-04-17 17:56:52', '2022-04-18 17:20:55', '2022-04-17 17:56:52', 0),
-	(17, 'jquery.com', 'TLS_1_2', 'NOT_VULNERABLE_NO_ORACLE', 0, 0, 0, 1, 2, 27, 73, '2022-04-17 17:57:06', '2022-04-18 17:20:55', '2022-04-17 17:57:06', 0),
-	(18, 'codepen.io', 'TLS_1_3', 'NOT_VULNERABLE_NO_ORACLE', 0, 0, 0, 1, 0, 21, 48, '2022-04-17 17:57:18', '2022-04-18 17:20:55', '2022-04-17 17:57:18', 0),
-	(19, 'www.w3schools.com', 'TLS_1_3', 'NOT_VULNERABLE_NO_ORACLE', 0, 0, 0, 1, 0, 24, 381, '2022-04-17 17:57:56', '2022-04-18 17:20:55', '2022-04-17 17:57:56', 0),
-	(20, 'reddit.com:443', 'TLS_1_3', 'NOT_VULNERABLE_NO_ORACLE', 0, 0, 0, 1, 0, 12, 120, '2022-04-17 18:00:53', '2022-04-18 17:20:55', '2022-04-17 18:00:53', 0),
+	(8, '192.168.1.22', 'TLS_1_2', 'NOT_VULNERABLE_NO_ORACLE', 0, 0, 0, 1, 0, 21, 274, '2022-04-17 17:54:08', '2022-04-30 15:35:12', '2022-04-17 17:54:08', 0),
+	(9, 'google.com', 'TLS_1_3', 'NOT_VULNERABLE_NO_ORACLE', 0, 0, 0, 1, 2, 24, 51, '2022-04-17 17:54:41', '2022-04-30 15:35:12', '2022-04-17 17:54:41', 0),
+	(10, 'gmail.com', 'TLS_1_3', 'NOT_VULNERABLE_NO_ORACLE', 0, 0, 0, 1, 2, 24, 51, '2022-04-17 17:54:59', '2022-04-30 15:35:12', '2022-04-17 17:54:59', 0),
+	(11, 'cisco.com', 'TLS_1_2', 'NOT_VULNERABLE_NO_ORACLE', 0, 0, 0, 0, 2, 20, 292, '2022-04-17 17:55:19', '2022-04-30 15:35:12', '2022-04-17 17:55:19', 0),
+	(12, 'twitter.com', 'TLS_1_3', 'NOT_VULNERABLE_NO_ORACLE', 0, 0, 0, 1, 0, 11, 226, '2022-04-17 17:55:33', '2022-04-30 15:35:12', '2022-04-17 17:55:33', 0),
+	(13, 'securitytabbits.com', 'TLS_1_3', 'NOT_VULNERABLE_NO_ORACLE', 0, 0, 0, 1, 0, 11, 226, '2022-04-17 17:55:51', '2022-04-30 15:35:12', '2022-04-17 17:55:51', 0),
+	(14, 'github.com', 'TLS_1_3', 'NOT_VULNERABLE_NO_ORACLE', 0, 0, 0, 1, 0, 21, 319, '2022-04-17 17:56:02', '2022-04-30 15:35:12', '2022-04-17 17:56:02', 0),
+	(15, 'getbootstrap.com', 'TLS_1_3', 'NOT_VULNERABLE_NO_ORACLE', 0, 0, 0, 1, 2, 30, 72, '2022-04-17 17:56:38', '2022-04-30 15:35:12', '2022-04-17 17:56:38', 0),
+	(16, 'fontawesome.com', 'TLS_1_3', 'NOT_VULNERABLE_NO_ORACLE', 0, 0, 0, 1, 2, 25, 246, '2022-04-17 17:56:52', '2022-04-30 15:35:12', '2022-04-17 17:56:52', 0),
+	(17, 'jquery.com', 'TLS_1_2', 'NOT_VULNERABLE_NO_ORACLE', 0, 0, 0, 1, 2, 27, 61, '2022-04-17 17:57:06', '2022-04-30 15:35:12', '2022-04-17 17:57:06', 0),
+	(18, 'codepen.io', 'TLS_1_3', 'NOT_VULNERABLE_NO_ORACLE', 0, 0, 0, 1, 0, 21, 36, '2022-04-17 17:57:18', '2022-04-30 15:35:12', '2022-04-17 17:57:18', 0),
+	(19, 'www.w3schools.com', 'TLS_1_3', 'NOT_VULNERABLE_NO_ORACLE', 0, 0, 0, 1, 0, 24, 369, '2022-04-17 17:57:56', '2022-04-30 15:35:12', '2022-04-17 17:57:56', 0),
+	(20, 'reddit.com:443', 'TLS_1_3', 'NOT_VULNERABLE_NO_ORACLE', 0, 0, 0, 1, 0, 12, 108, '2022-04-17 18:00:53', '2022-04-30 15:35:12', '2022-04-17 18:00:53', 0),
 	(21, 'reddit.com:10443', NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 100000, '2022-04-17 18:01:02', '2022-04-17 20:51:26', NULL, 1),
-	(22, 'reddit.com', 'TLS_1_3', 'NOT_VULNERABLE_NO_ORACLE', 0, 0, 0, 1, 0, 12, 120, '2022-04-17 18:01:50', '2022-04-18 17:20:55', '2022-04-17 18:01:50', 0),
-	(23, 'www.reddit.com', 'TLS_1_3', 'NOT_VULNERABLE_NO_ORACLE', 0, 0, 0, 1, 0, 12, 120, '2022-04-17 18:01:57', '2022-04-18 17:20:55', '2022-04-17 18:01:57', 0),
-	(24, 'ubuntu.com', 'TLS_1_3', 'NOT_VULNERABLE_RSA_NOT_SUPPORTED', 0, 0, 0, 1, 0, 7, 29, '2022-04-17 18:02:52', '2022-04-18 17:20:55', '2022-04-17 18:02:52', 0),
-	(25, 'zoom.us', 'TLS_1_2', 'NOT_VULNERABLE_RSA_NOT_SUPPORTED', 0, 0, 0, 1, 0, 8, 44, '2022-04-17 18:03:10', '2022-04-18 17:20:55', '2022-04-17 18:03:10', 0),
-	(26, '127.0.0.1', 'TLS_1_3', 'NOT_VULNERABLE_NO_ORACLE', 0, 0, 0, 1, 0, 47, 268, '2022-04-17 18:04:03', '2022-04-18 17:20:55', '2022-04-17 18:04:03', 0),
-	(27, 'paloaltonetworks.com', 'TLS_1_3', 'NOT_VULNERABLE_NO_ORACLE', 0, 0, 0, 1, 0, 13, 313, '2022-04-17 18:04:21', '2022-04-18 17:20:55', '2022-04-17 18:04:21', 0),
-	(28, 'guitarworld.com', 'TLS_1_3', 'NOT_VULNERABLE_NO_ORACLE', 0, 0, 0, 1, 0, 13, 61, '2022-04-17 18:06:36', '2022-04-18 17:20:55', '2022-04-17 18:06:36', 0),
-	(29, 'torlook.info', 'TLS_1_3', 'NOT_VULNERABLE_NO_ORACLE', 0, 0, 0, 1, 2, 23, 77, '2022-04-17 18:07:29', '2022-04-18 17:20:55', '2022-04-17 18:07:29', 0),
-	(30, 'undraw.co', 'TLS_1_3', 'NOT_VULNERABLE_RSA_NOT_SUPPORTED', 0, 0, 0, 1, 2, 14, 87, '2022-04-17 18:08:12', '2022-04-18 17:20:55', '2022-04-17 18:08:12', 0),
-	(31, 'smtp.dreamhost.com:465', 'TLS_1_3', 'NOT_VULNERABLE_NO_ORACLE', 0, 0, 0, 1, 2, 89, 231, '2022-04-17 18:12:24', '2022-04-18 17:20:56', '2022-04-17 18:12:24', 0),
-	(32, 'wikipedia.org', 'TLS_1_3', 'NOT_VULNERABLE_RSA_NOT_SUPPORTED', 0, 0, 0, 1, 0, 9, 53, '2022-04-17 18:13:24', '2022-04-18 17:20:56', '2022-04-17 18:13:24', 0),
-	(33, 'pynative.com', 'TLS_1_3', 'NOT_VULNERABLE_NO_ORACLE', 0, 0, 0, 1, 1, 25, 51, '2022-04-17 20:48:54', '2022-04-18 17:20:56', '2022-04-17 20:51:57', 0),
-	(34, 'twitch.tv', 'TLS_1_3', 'NOT_VULNERABLE_NO_ORACLE', 0, 0, 0, 1, 0, 13, 344, '2022-04-18 15:16:06', '2022-04-18 17:20:56', '2022-04-18 15:16:06', 0);
+	(22, 'reddit.com', 'TLS_1_3', 'NOT_VULNERABLE_NO_ORACLE', 0, 0, 0, 1, 0, 12, 108, '2022-04-17 18:01:50', '2022-04-30 15:35:12', '2022-04-17 18:01:50', 0),
+	(23, 'www.reddit.com', 'TLS_1_3', 'NOT_VULNERABLE_NO_ORACLE', 0, 0, 0, 1, 0, 12, 108, '2022-04-17 18:01:57', '2022-04-30 15:35:12', '2022-04-17 18:01:57', 0),
+	(24, 'ubuntu.com', 'TLS_1_3', 'NOT_VULNERABLE_RSA_NOT_SUPPORTED', 0, 0, 0, 1, 0, 7, 17, '2022-04-17 18:02:52', '2022-04-30 15:35:12', '2022-04-17 18:02:52', 0),
+	(25, 'zoom.us', 'TLS_1_2', 'NOT_VULNERABLE_RSA_NOT_SUPPORTED', 0, 0, 0, 1, 0, 8, 32, '2022-04-17 18:03:10', '2022-04-30 15:35:12', '2022-04-17 18:03:10', 0),
+	(26, '127.0.0.1', 'TLS_1_3', 'NOT_VULNERABLE_NO_ORACLE', 0, 0, 0, 1, 0, 47, 256, '2022-04-17 18:04:03', '2022-04-30 15:35:12', '2022-04-17 18:04:03', 0),
+	(27, 'paloaltonetworks.com', 'TLS_1_3', 'NOT_VULNERABLE_NO_ORACLE', 0, 0, 0, 1, 0, 13, 301, '2022-04-17 18:04:21', '2022-04-30 15:35:12', '2022-04-17 18:04:21', 0),
+	(28, 'guitarworld.com', 'TLS_1_3', 'NOT_VULNERABLE_NO_ORACLE', 0, 0, 0, 1, 0, 13, 49, '2022-04-17 18:06:36', '2022-04-30 15:35:12', '2022-04-17 18:06:36', 0),
+	(29, 'torlook.info', 'TLS_1_3', 'NOT_VULNERABLE_NO_ORACLE', 0, 0, 0, 1, 2, 23, 65, '2022-04-17 18:07:29', '2022-04-30 15:35:12', '2022-04-17 18:07:29', 0),
+	(30, 'undraw.co', 'TLS_1_3', 'NOT_VULNERABLE_RSA_NOT_SUPPORTED', 0, 0, 0, 1, 2, 14, 75, '2022-04-17 18:08:12', '2022-04-30 15:35:12', '2022-04-17 18:08:12', 0),
+	(31, 'smtp.dreamhost.com:465', 'TLS_1_3', 'NOT_VULNERABLE_NO_ORACLE', 0, 0, 0, 1, 2, 89, 219, '2022-04-17 18:12:24', '2022-04-30 15:35:12', '2022-04-17 18:12:24', 0),
+	(32, 'wikipedia.org', 'TLS_1_3', 'NOT_VULNERABLE_RSA_NOT_SUPPORTED', 0, 0, 0, 1, 0, 9, 41, '2022-04-17 18:13:24', '2022-04-30 15:35:12', '2022-04-17 18:13:24', 0),
+	(33, 'pynative.com', 'TLS_1_3', 'NOT_VULNERABLE_NO_ORACLE', 0, 0, 0, 1, 1, 25, 39, '2022-04-17 20:48:54', '2022-04-30 15:35:12', '2022-04-17 20:51:57', 0),
+	(34, 'twitch.tv', 'TLS_1_3', 'NOT_VULNERABLE_NO_ORACLE', 0, 0, 0, 1, 0, 13, 332, '2022-04-18 15:16:06', '2022-04-30 15:35:12', '2022-04-18 15:16:06', 0);
 
 -- Dumping structure for table certchecker.sitecert
 CREATE TABLE IF NOT EXISTS `sitecert` (
@@ -341,7 +359,7 @@ CREATE TABLE IF NOT EXISTS `sitecert` (
   CONSTRAINT `sitecert_ibfk_1` FOREIGN KEY (`site_id`) REFERENCES `site` (`site_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 
--- Dumping data for table certchecker.sitecert: ~19 rows (approximately)
+-- Dumping data for table certchecker.sitecert: ~71 rows (approximately)
 INSERT INTO `sitecert` (`site_id`, `serial`, `cn`, `algoname`, `hashname`, `algo`, `countryName`, `stateOrProvinceName`, `localityName`, `organizationName`, `organizationalUnitName`, `emailAddress`, `commonName`, `keysize`, `alive`, `expiration`, `firstts`, `updatets`) VALUES
 	(6, '99565320202650452861752791156765321481', 'OU=Domain Control Validated,OU=PositiveSSL Wildcard,CN=*.badssl.com', 'sha256WithRSAEncryption', 'sha256', '_RSAPublicKey', 'GB', 'Greater Manchester', 'Salford', 'COMODO CA Limited', NULL, NULL, 'COMODO RSA Domain Validation Secure Server CA', 2048, 1, '2015-04-12 23:59:59', '2022-04-17 17:51:51', '2022-04-17 17:51:52'),
 	(6, '57397899145990363081023081275480378375', 'C=GB,ST=Greater Manchester,L=Salford,O=COMODO CA Limited,CN=COMODO RSA Domain Validation Secure Server CA', 'sha384WithRSAEncryption', 'sha384', '_RSAPublicKey', 'GB', 'Greater Manchester', 'Salford', 'COMODO CA Limited', NULL, NULL, 'COMODO RSA Certification Authority', 2048, 1, '2029-02-11 23:59:59', '2022-04-17 17:51:52', '2022-04-17 17:51:52'),
@@ -426,9 +444,9 @@ CREATE TABLE IF NOT EXISTS `sitedns` (
   `updatets` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   KEY `FK_sitedns_site` (`site_id`) USING BTREE,
   CONSTRAINT `FK_sitedns_site` FOREIGN KEY (`site_id`) REFERENCES `site` (`site_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 
--- Dumping data for table certchecker.sitedns: ~147 rows (approximately)
+-- Dumping data for table certchecker.sitedns: ~234 rows (approximately)
 INSERT INTO `sitedns` (`site_id`, `dns`, `alive`, `firstts`, `updatets`) VALUES
 	(8, 'securityrabbits.com', 1, '2022-04-17 17:54:09', '2022-04-17 17:54:09'),
 	(8, 'www.securityrabbits.com', 1, '2022-04-17 17:54:09', '2022-04-17 17:54:09'),
@@ -686,9 +704,9 @@ CREATE TABLE IF NOT EXISTS `sitessl` (
   CONSTRAINT `FK_certsite_site` FOREIGN KEY (`site_id`) REFERENCES `site` (`site_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_sitecert_sslsuite` FOREIGN KEY (`sslsuite_id`) REFERENCES `sslsuite` (`sslsuite_id`),
   CONSTRAINT `FK_sitessl_cyphersuite` FOREIGN KEY (`cyphersuite_id`) REFERENCES `cyphersuite` (`cyphersuite_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=607 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=633 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table certchecker.sitessl: ~190 rows (approximately)
+-- Dumping data for table certchecker.sitessl: ~604 rows (approximately)
 INSERT INTO `sitessl` (`sitessl_id`, `site_id`, `sslsuite_id`, `cyphersuite_id`, `supported`, `accepted`, `alive`, `keysize`, `firstts`, `updatets`) VALUES
 	(3, 6, 3, 263, 1, 1, 1, 256, '2022-04-17 17:51:52', '2022-04-17 17:51:52'),
 	(4, 6, 3, 264, 1, 1, 1, 128, '2022-04-17 17:51:52', '2022-04-17 17:51:52'),
