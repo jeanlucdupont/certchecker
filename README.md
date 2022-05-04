@@ -10,8 +10,10 @@ Three steps:<br>
 2022 04 14 Step #1 is done. <br>
 2022 04 20 Working on step #2. <br>
   Main page interface is done. <br>
-2022 04 30 step #2 <br>
+2022 04 30 Working on step #2 <br>
   Site management is done <br>
+2022 05 04 Working on Step #2 <br>
+  Certificate security settings is almost done. <br>
 
 ![image](https://user-images.githubusercontent.com/103344686/166121124-c17a88f0-1ba3-4364-89aa-73951d9dcc1b.png)
 
