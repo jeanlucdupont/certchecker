@@ -9,17 +9,36 @@ The solution is a bit rough around the edges.
 ------------------------------------------------
 - Snapshots
 ------------------------------------------------
+
+
 Main page. Gives you a global status of your sites using SSL.
+
 ![image](https://user-images.githubusercontent.com/103344686/175818325-e0a95d46-338e-4088-874c-f16da7b14d0d.png)
+
+
+
+
 
 Certificate setting page. Define what you believe are acceptable SSL/TLS protocoles and Cyphers. 
 ![image](https://user-images.githubusercontent.com/103344686/175818377-568a1d1d-247b-4cf9-9e54-0da6bbde4dd9.png)
 
+
+
+
+
 Add/Remove sites
+
 ![image](https://user-images.githubusercontent.com/103344686/175818450-94e965ec-4287-49f7-87c6-6659a2e44e95.png)
 
+
+
+
 Email report example
+
 ![image](https://user-images.githubusercontent.com/103344686/175818571-987c6de1-4e8e-4b4f-85a3-ed8f3064ddb5.png)
+
+
+
 
 
 ------------------------------------------------
