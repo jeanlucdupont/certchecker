@@ -51,12 +51,28 @@ $smarty->assign('certlist', $certlist);
 $request  = "select * from `site` order by `address`";
 $ans      = mysqli_query($connect, $request);
 $sitelist = array();
+$nbfail = 0;
+$nbexpired = 0;
+$nbabout = 0;
+$nbsiteatrisk = 0;
 while ($fields = mysqli_fetch_array($ans))
 {
-  array_push($sitelist, $fields);
+	array_push($sitelist, $fields);
+	if ($fields['failcount'] != 0)
+		$nbfail++;
+	if ($fields['daterisk'] < 0)
+		$nbexpired++;
+	elseif ($fields['daterisk'] < 31)
+		$nbabout++;
+	if ($fields['failcount'] != 0 || $fields['daterisk'] < 31 || $fields['sslrisk'] != 0 || $fields['cypherrisk'] != 0)
+		$nbsiteatrisk++;
 }
 $smarty->assign('sitelist', $sitelist);
 $smarty->assign('count_site', mysqli_num_rows($ans));
+$smarty->assign('count_fail', $nbfail);
+$smarty->assign('count_expired', $nbexpired);
+$smarty->assign('count_about', $nbabout);
+$smarty->assign('count_siteatrisk', $nbsiteatrisk);
 
 $smarty->display('index.tpl');
 mysqli_close($connect);
