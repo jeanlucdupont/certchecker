@@ -6,6 +6,9 @@ The solution is a bit rough around the edges.
 1. There is NO installation script. Read the installation documentation at the bottom of this document. Contact me jl(.)dupont[@]gmail(.)com if you're stuck.
 2. There is NO user management. It's open source. Feel free to add it ;)
 
+------------------------------------------------
+- Snapshots
+------------------------------------------------
 Main page. Gives you a global status of your sites using SSL.
 ![image](https://user-images.githubusercontent.com/103344686/175818325-e0a95d46-338e-4088-874c-f16da7b14d0d.png)
 
@@ -50,4 +53,4 @@ Must have:
 - Run certchecker.py and look for error. If you miss a module, add it with pip3
 - Run mailer.py and look for error. If you miss a module, add it with pip3
 - Schedule certchecker.py and mailer.py to run daily (cron, or cron.daily). Make sure mailer.py is ran after certchecker.py
-
+6. Profit
