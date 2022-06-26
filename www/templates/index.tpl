@@ -32,7 +32,7 @@
 							<div class="card bg-dark" style="height: 7rem;">
 								<div class="card-body pb-0">
 									<div class="d-flex align-items-center justify-content-between">
-										<h1 class="text-danger font-weight-bold">29</h1>
+										<h1 class="text-danger font-weight-bold">{$count_siteatrisk}</h1>
 									</div>
 									<div class="d-flex align-items-center justify-content-between">
 										<h5 class="text-light font-weight-bold ">Sites at risk</h5>
@@ -44,7 +44,7 @@
 							<div class="card bg-dark" style="height: 7rem;">
 								<div class="card-body pb-0">
 									<div class="d-flex align-items-center justify-content-between">
-										<h1 class="text-danger font-weight-bold">1</h1>
+										<h1 class="text-danger font-weight-bold">{$count_expired}</h1>
 									</div>
 									<div class="d-flex align-items-center justify-content-between ">
 										<h5 class="text-light font-weight-bold ">Expired certificates</h5>
@@ -56,7 +56,7 @@
 							<div class="card bg-dark" style="height: 7rem;">
 								<div class="card-body pb-0">
 									<div class="d-flex align-items-center justify-content-between">
-										<h1 class="text-warning font-weight-bold">1</h1>
+										<h1 class="text-warning font-weight-bold">{$count_expired}</h1>
 									</div>
 									<div class="d-flex align-items-center justify-content-between">
 										<h5 class="text-light font-weight-bold ">Certicates to expire</h5>
@@ -68,7 +68,7 @@
 							<div class="card bg-dark" style="height: 7rem;">
 								<div class="card-body pb-0">
 									<div class="d-flex align-items-center justify-content-between">
-										<h1 class="text-danger font-weight-bold">2</h1>
+										<h1 class="text-danger font-weight-bold">{$count_fail}</h1>
 									</div>
 									<div class="d-flex align-items-center justify-content-between">
 										<h5 class="text-light font-weight-bold ">Failed connections</h5>
